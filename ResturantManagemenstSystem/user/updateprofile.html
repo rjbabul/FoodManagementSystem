@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Profile
+	</title>
+	<link rel="stylesheet" href="styles.css">
+	<script>
+		
+		var email = sessionStorage.getItem('username');
+		var user;
+
+		var obj = JSON.parse(localStorage.getItem('myStorage'));
+		for(let i = 0;i<obj.length;i++)
+        {
+          var myobj = obj[i];
+           
+          if(myobj.Email == email)
+          {
+            user = obj[i];
+          }
+          
+        }
+         
+     function UpdateControl()
+     {
+
+        var name = document.getElementById("name").value;
+
+        if (name==null || name=="")
+        {  
+          alert("Name can't be blank");  
+          return false;  
+        }
+      else 
+        {
+          for(let i =0 ; i< name.length; i++)
+          {
+            if((name[i]<='z' && name[i]>='a')||(name[i]<='Z' && name[i]>='A')|| name[i]==' ' || name[i]=='.')
+              {
+                continue;
+              }
+            else
+            {
+              alert("Name just contain a-z, A-Z and whitespace");  
+              return false;  
+            }
+          }
+        }
+    
+         var obj = JSON.parse(localStorage.getItem('myStorage'));
+          
+          var myobj ;
+           for(let i = 0;i<obj.length;i++)
+          {
+            
+            if( obj[i].Email == email)
+            {
+              
+              obj[i].name = name;
+              var temp = obj[i];
+              var myjson = JSON.stringify(obj);
+              localStorage.setItem('myStorage', myjson);
+              
+                
+
+              var tempor = JSON.parse(localStorage.getItem('LogSession'));
+              tempor.name = name;
+        
+              var mytemp = JSON.stringify(temopor);
+              localStorage.setItem('LogSession', mytemp);
+
+              sessionStorage.setItem('isLoggedIn', 'true');
+             
+              alert("Udpate Successfully");  
+            }
+            
+          }
+           
+            
+          return false;
+
+     }
+
+	</script>
+</head>
+
+<body>
+  <div class="container">
+		 
+	<div>
+    
+     <nav>
+      <ul>
+      <li><a href="profile.html"><script >document.write(user.name);</script></a></li>
+      <li><a href="Updateprofile.html">Update profile</a></li>
+       <li><a href="searchfood.html">Search food</a></li>
+        <li><a href="AddFood.html">Add Food</a></li>
+        <li><a href="ViewList.html">Food List</a></li>
+        
+        <li><a href="#" onclick="logoutControl()">LogOut</a></li>
+      </ul>
+    </nav>
+  </div>
+    
+ 
+  <div style="background-color: white;" >
+    
+     <div class="containers" >
+    <h2>Update Name</h2>
+    <form onsubmit="return UpdateControl()" method="POST">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"  >
+      </div>
+      
+      <div class="form-group">
+        <input type="submit" value="UdpateName">
+      
+    </form>
+  </div>
+
+
+  </div>
+</body>
+</html>

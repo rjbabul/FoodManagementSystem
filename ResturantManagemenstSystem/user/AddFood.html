@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>
+    Profile
+  </title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="food.css">
+
+  <script>
+    
+    var email = sessionStorage.getItem('username');
+    var user;
+
+    var obj = JSON.parse(localStorage.getItem('myStorage'));
+    for(let i = 0;i<obj.length;i++)
+        {
+          var myobj = obj[i];
+           
+          if(myobj.Email == email)
+          {
+            user = obj[i];
+          }
+          
+        }
+
+       function FoodAdd()
+       {
+        
+          var foodname = document.getElementById("name").value;
+          var category = document.getElementById("category").value;
+          var manufacture_date = document.getElementById("manufacture_date").value;
+          var expiration_date = document.getElementById("expiration_date").value;
+          
+          var restaurant = document.getElementById("restaurant").value;
+          var price = document.getElementById("price").value;
+        
+          // Name Validation 
+
+        if (foodname==null || foodname=="")
+          {  
+            alert("FoodName can't be blank");  
+            return false;  
+          }
+        else 
+          {
+            for(let i =0 ; i< foodname.length; i++)
+            {
+              if((foodname[i]<='z' && foodname[i]>='a')||(foodname[i]<='Z' && foodname[i]>='A')|| foodname[i]==' ' || foodname[i]=='.')
+                {
+                  continue;
+                }
+              else
+              {
+                alert("Food Name just contain a-z, A-Z and whitespace");  
+                return false;  
+              }
+            }
+          }
+
+          if(restaurant.length==0)
+          {
+            alert("Restaurant Name must be provided");  
+                return false; 
+          }
+          if(price==null )
+          {
+              alert("Price must be provided");  
+              return false; 
+          }
+        
+
+          var myobj =
+          {
+            "foodname": foodname,
+            "category": category,
+            "manufacture_date": manufacture_date,
+            "expiration_date": expiration_date,
+            "restaurant" :  restaurant,
+            "price": price 
+          }; 
+
+          console.log(myobj);
+
+         if(localStorage.getItem('FoodStorage'))
+         {
+          var mylist = JSON.parse(localStorage.getItem('FoodStorage'));
+          mylist.push(myobj);
+         }
+         else
+         {
+            var mylist = [];
+            mylist.push(myobj);
+         }
+
+          var myjson = JSON.stringify(mylist);
+          localStorage.setItem('FoodStorage', myjson);
+
+          alert("Food Add Succesfully");  
+           return false;
+         
+        }
+
+  </script>
+
+</head>
+
+<body>
+   
+     
+ <div class="container">
+     
+    <nav>
+      <ul>
+      <li><a href="profile.html"><script >document.write(user.name);</script></a></li>
+      <li><a href="Updateprofile.html">Update profile</a></li>
+       <li><a href="searchfood.html">Search food</a></li>
+        <li><a href="AddFood.html">Add Food</a></li>
+        <li><a href="ViewList.html">Food List</a></li>
+         
+        <li><a href="#" onclick="logoutControl()">LogOut</a></li>
+      </ul>
+    </nav>
+  </div>
+    
+    
+
+  <div style="background-color: white; "class="containers" >
+    <h2>Add Food</h2>
+     <form onsubmit="return FoodAdd()" class="food-form" method="POST">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name"  >
+
+    <label for="category">Category:</label>
+    <select id="category" name="category">
+      <option value="breakfast">Breakfast</option>
+      <option value="lunch">Lunch</option>
+      <option value="dinner">Dinner</option>
+      <option value="snack">Snack</option>
+      <option value="dessert">Dessert</option>
+    </select>
+
+    <label for="manufacture-date">Manufacture Date:</label>
+    <input type="date" id="manufacture_date" name="manufacture-date"  >
+
+    <label for="expiration-date">Expiration Date:</label>
+    <input type="date" id="expiration_date" name="expiration-date"  >
+
+    <label for="restaurant">Restaurant:</label>
+    <input type="text" id="restaurant" name="restaurant"  >
+
+    <label for="price">price:</label>
+    <input type ="number" id="price" name="price"  > 
+
+    <input type="submit" value="Add Food">
+  </form>
+
+
+  </div>
+</body>
+</html>

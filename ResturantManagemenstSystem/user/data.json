@@ -1,0 +1,412 @@
+
+[
+    {
+        "foodname": "vat and vorta",
+        "category": "lunch",
+        "manufacture_date": "2023-05-26",
+        "expiration_date": "2023-05-31",
+        "restaurant": "FNF",
+        "price": "100"
+    },
+    {
+        "foodname": "Chicken Biriani",
+        "category": "dinner",
+        "manufacture_date": "2023-05-26",
+        "expiration_date": "2023-05-31",
+        "restaurant": "FNF",
+        "price": "200"
+    },
+    {
+        "foodname": "Dog Biriani",
+        "category": "dinner",
+        "manufacture_date": "2023-05-26",
+        "expiration_date": "2023-05-31",
+        "restaurant": "Sultan dine",
+        "price": "30000"
+    },
+    {
+        "foodname": "dd",
+        "category": "lunch",
+        "manufacture_date": "2023-05-10",
+        "expiration_date": "2023-05-12",
+        "restaurant": "dd",
+        "price": "1111"
+    },
+    {
+        "foodname": "chicker fry",
+        "category": "snack",
+        "manufacture_date": "2023-05-10",
+        "expiration_date": "2023-05-10",
+        "restaurant": "FNF",
+        "price": "111"
+    },
+    {
+        "foodname": "chicker fry",
+        "category": "breakfast",
+        "manufacture_date": "2023-05-10",
+        "expiration_date": "2023-05-10",
+        "restaurant": "FNF",
+        "price": "111"
+    },
+    {
+        "foodname": "VAT ALU",
+        "category": "lunch",
+        "manufacture_date": "2023-05-10",
+        "expiration_date": "2023-05-10",
+        "restaurant": "FNF",
+        "price": "111"
+    },
+    {
+        "foodname": "VAT ALU",
+        "category": "dinner",
+        "manufacture_date": "2023-05-10",
+        "expiration_date": "2023-05-10",
+        "restaurant": "FNF",
+        "price": "111"
+    },
+    {
+        "foodname": "beef fry",
+        "category": "snack",
+        "manufacture_date": "2023-05-10",
+        "expiration_date": "2023-05-10",
+        "restaurant": "FNF",
+        "price": "111"
+    },
+    {
+        "foodname": "sweet",
+        "category": "dessert",
+        "manufacture_date": "2023-05-10",
+        "expiration_date": "2023-05-10",
+        "restaurant": "FNF",
+        "price": "111"
+    },
+    {
+        "foodname": "sweet",
+        "category": "dessert",
+        "manufacture_date": "2023-05-10",
+        "expiration_date": "2023-05-10",
+        "restaurant": "FNF",
+        "price": "1113"
+    },
+    {
+        "foodname": "sweet banana",
+        "category": "dessert",
+        "manufacture_date": "2023-05-10",
+        "expiration_date": "2023-05-10",
+        "restaurant": "FNF",
+        "price": "44"
+    },
+    {
+        "foodname": "sweet d",
+        "category": "dessert",
+        "manufacture_date": "2023-05-10",
+        "expiration_date": "2023-05-25",
+        "restaurant": "FNF",
+        "price": "333"
+    },
+    {
+        "foodname": "sweet dd",
+        "category": "dessert",
+        "manufacture_date": "2023-05-15",
+        "expiration_date": "2023-05-27",
+        "restaurant": "FNF",
+        "price": "333"
+    },
+    {
+        "foodname": "dhoi",
+        "category": "dessert",
+        "manufacture_date": "2023-05-15",
+        "expiration_date": "2023-05-27",
+        "restaurant": "shah mistanno vandar",
+        "price": "333"
+    },
+    {
+        "foodname": "raj vog",
+        "category": "dessert",
+        "manufacture_date": "2023-05-15",
+        "expiration_date": "2023-05-27",
+        "restaurant": "shah mistanno vandar",
+        "price": "500"
+    },
+    {
+        "foodname": "katari  vog",
+        "category": "dessert",
+        "manufacture_date": "2023-05-15",
+        "expiration_date": "2023-05-27",
+        "restaurant": "shah mistanno vandar",
+        "price": "333"
+    },
+    {
+        "foodname": "katari  vog",
+        "category": "dessert",
+        "manufacture_date": "2023-05-15",
+        "expiration_date": "2023-05-27",
+        "restaurant": "modok mistanno vandar",
+        "price": "333"
+    },
+    {
+        "foodname": "raj  vog",
+        "category": "dessert",
+        "manufacture_date": "2023-05-15",
+        "expiration_date": "2023-05-27",
+        "restaurant": "modok mistanno vandar",
+        "price": "333"
+    },
+    {
+        "foodname": "raj  vog",
+        "category": "dessert",
+        "manufacture_date": "2023-05-15",
+        "expiration_date": "2023-05-27",
+        "restaurant": "pal mistanno vandar",
+        "price": "333"
+    },
+    {
+        "foodname": "doi",
+        "category": "dessert",
+        "manufacture_date": "2023-05-15",
+        "expiration_date": "2023-05-27",
+        "restaurant": "pal mistanno vandar",
+        "price": "33333"
+    },
+    {
+        "foodname": "vat ",
+        "category": "dessert",
+        "manufacture_date": "2023-05-15",
+        "expiration_date": "2023-05-27",
+        "restaurant": "bismillah",
+        "price": "50"
+    },
+    {
+        "foodname": "vat ",
+        "category": "dessert",
+        "manufacture_date": "2023-05-15",
+        "expiration_date": "2023-05-27",
+        "restaurant": "raj rastourant",
+        "price": "50"
+    },
+    {
+        "foodname": "vat ",
+        "category": "dessert",
+        "manufacture_date": "2023-05-15",
+        "expiration_date": "2023-05-27",
+        "restaurant": "jamai rastourant",
+        "price": "50"
+    },
+    {
+        "foodname": "khichuri",
+        "category": "dessert",
+        "manufacture_date": "2023-05-15",
+        "expiration_date": "2023-05-27",
+        "restaurant": "jamai rastourant",
+        "price": "50"
+    },
+    {
+        "foodname": "khichuri",
+        "category": "dessert",
+        "manufacture_date": "2023-05-15",
+        "expiration_date": "2023-05-27",
+        "restaurant": "raj rastourant",
+        "price": "50"
+    },
+    {
+        "foodname": "khichuri",
+        "category": "dessert",
+        "manufacture_date": "2023-05-15",
+        "expiration_date": "2023-05-27",
+        "restaurant": "raj rastourant a",
+        "price": "50"
+    },
+    {
+        "foodname": "khichuri",
+        "category": "dessert",
+        "manufacture_date": "2023-05-15",
+        "expiration_date": "2023-05-27",
+        "restaurant": "raj rastourant a",
+        "price": "503"
+    },
+    {
+        "foodname": "bira",
+        "category": "lunch",
+        "manufacture_date": "2023-05-15",
+        "expiration_date": "2023-05-27",
+        "restaurant": "raj rastourant a",
+        "price": "503"
+    },
+    {
+        "foodname": "biriani",
+        "category": "lunch",
+        "manufacture_date": "2023-05-15",
+        "expiration_date": "2023-05-27",
+        "restaurant": "raj rastourant a",
+        "price": "503"
+    },
+    {
+        "foodname": "biriani",
+        "category": "lunch",
+        "manufacture_date": "2023-05-15",
+        "expiration_date": "2023-05-27",
+        "restaurant": "raj rastourant ",
+        "price": "503"
+    },
+    {
+        "foodname": "biriani",
+        "category": "lunch",
+        "manufacture_date": "2023-05-15",
+        "expiration_date": "2023-05-27",
+        "restaurant": "raj rastourant ",
+        "price": "50"
+    },
+    {
+        "foodname": "chicken khichuri",
+        "category": "lunch",
+        "manufacture_date": "2023-05-15",
+        "expiration_date": "2023-05-27",
+        "restaurant": "raj rastourant ",
+        "price": "50"
+    },
+    {
+        "foodname": "vat dal",
+        "category": "lunch",
+        "manufacture_date": "2023-05-15",
+        "expiration_date": "2023-05-27",
+        "restaurant": "raj rastourant ",
+        "price": "50"
+    },
+    {
+        "foodname": "vat dal",
+        "category": "dinner",
+        "manufacture_date": "2023-05-15",
+        "expiration_date": "2023-05-27",
+        "restaurant": "raj rastourant ",
+        "price": "50"
+    },
+    {
+        "foodname": "khichuri",
+        "category": "dinner",
+        "manufacture_date": "2023-05-15",
+        "expiration_date": "2023-05-27",
+        "restaurant": "raj rastourant ",
+        "price": "200"
+    },
+    {
+        "foodname": "polao",
+        "category": "dinner",
+        "manufacture_date": "2023-05-15",
+        "expiration_date": "2023-05-27",
+        "restaurant": "raj rastourant ",
+        "price": "200"
+    },
+    {
+        "foodname": "kacchi biriyani",
+        "category": "dinner",
+        "manufacture_date": "2023-05-15",
+        "expiration_date": "2023-05-27",
+        "restaurant": "raj rastourant ",
+        "price": "200"
+    },
+    {
+        "foodname": "kacchi biriyani",
+        "category": "dinner",
+        "manufacture_date": "2023-05-15",
+        "expiration_date": "2023-05-27",
+        "restaurant": "tazmohol restourant",
+        "price": "300"
+    },
+    {
+        "foodname": "kacchi biriyani with dessert",
+        "category": "dinner",
+        "manufacture_date": "2023-05-15",
+        "expiration_date": "2023-05-27",
+        "restaurant": "tazmohol restourant",
+        "price": "500"
+    },
+    {
+        "foodname": "fried chicken",
+        "category": "snack",
+        "manufacture_date": "2023-05-15",
+        "expiration_date": "2023-05-27",
+        "restaurant": "tazmohol ",
+        "price": "500"
+    },
+    {
+        "foodname": "beef fry  ",
+        "category": "snack",
+        "manufacture_date": "2023-05-15",
+        "expiration_date": "2023-05-27",
+        "restaurant": "tazmohol ",
+        "price": "1500"
+    },
+    {
+        "foodname": "snacks",
+        "category": "snack",
+        "manufacture_date": "2023-05-15",
+        "expiration_date": "2023-05-27",
+        "restaurant": "tazmohol ",
+        "price": "1500"
+    },
+    {
+        "foodname": "fried janina ",
+        "category": "snack",
+        "manufacture_date": "2023-05-15",
+        "expiration_date": "2023-05-27",
+        "restaurant": "tazmohol ",
+        "price": "30"
+    },
+    {
+        "foodname": "vat alu vorta",
+        "category": "dinner",
+        "manufacture_date": "2023-05-15",
+        "expiration_date": "2023-05-27",
+        "restaurant": "Rj restourant",
+        "price": "50"
+    },
+    {
+        "foodname": "khichuri",
+        "category": "breakfast",
+        "manufacture_date": "2023-05-15",
+        "expiration_date": "2023-05-27",
+        "restaurant": "Rj restourant",
+        "price": "100"
+    },
+    {
+        "foodname": "khichuri and dessert",
+        "category": "dinner",
+        "manufacture_date": "2023-05-15",
+        "expiration_date": "2023-05-27",
+        "restaurant": "Rj restourant",
+        "price": "100"
+    },
+    {
+        "foodname": "polao and chicken",
+        "category": "lunch",
+        "manufacture_date": "2023-05-15",
+        "expiration_date": "2023-05-27",
+        "restaurant": "Rj restourant",
+        "price": "300"
+    },
+    {
+        "foodname": "polao and chicken",
+        "category": "breakfast",
+        "manufacture_date": "2023-05-15",
+        "expiration_date": "2023-05-27",
+        "restaurant": "Rj restourant",
+        "price": "300"
+    },
+    {
+        "foodname": "plan rice and chicken",
+        "category": "breakfast",
+        "manufacture_date": "2023-05-15",
+        "expiration_date": "2023-05-27",
+        "restaurant": "Rj restourant",
+        "price": "200"
+    },
+    {
+        "foodname": "plan rice and chicken",
+        "category": "dinner",
+        "manufacture_date": "2023-05-15",
+        "expiration_date": "2023-05-27",
+        "restaurant": "Rj restourant",
+        "price": "200"
+    }
+
+]

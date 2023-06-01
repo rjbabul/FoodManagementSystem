@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Card Pagination Example</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="food.css">
+  <style>
+    .card {
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+ <div class="container">
+     
+    <nav>
+      <ul>
+      <li><a href="profile.html">Profile</a></li>
+      <li><a href="Updateprofile.html">Update profile</a></li>
+       <li><a href="searchfood.html">Search food</a></li>
+        <li><a href="AddFood.html">Add Food</a></li>
+        <li><a href="ViewList.html">Food List</a></li>
+        
+        <li><a href="#" onclick="logoutControl()">LogOut</a></li>
+      </ul>
+    </nav>
+  </div>
+    
+  <div class="container">
+    <div id="cardContainer"></div>
+    <div id="pagination"></div>
+  </div>
+  <script>
+     var email = sessionStorage.getItem('username');
+    var user;
+
+    var obj = JSON.parse(localStorage.getItem('myStorage'));
+
+    for(let i = 0;i<obj.length;i++)
+        {
+          var myobj = obj[i];
+           
+          if(myobj.Email == email)
+          {
+            user = obj[i];
+          }
+          
+        }
+   
+ fetch('data.json')
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(data) {
+    // Process the data here
+     
+    const foodData = data;
+    const jsonData = foodData;
+
+    var pageSize = 3; // Number of cards per page
+    let currentPage = 1; // Current page number
+
+    const cardContainer = document.getElementById('cardContainer');
+    const paginationContainer = document.getElementById('pagination');
+
+   
+
+    function generateCard(cardData) {
+      const card = document.createElement('div');
+      card.classList.add('card');
+      card.innerText = `FoodName: ${cardData.foodname} \n Category: ${cardData.category} \n Rastourant: ${cardData.restaurant} \n Price: ${cardData.price} \n Manufacture Date: ${cardData.manufacture_date} \n Expire Date: ${cardData.expiration_date}`;
+      cardContainer.appendChild(card);
+    }
+
+    function renderPage(page) {
+      cardContainer.innerHTML = ' ';
+      const startIndex = (page - 1) * pageSize;
+      const endIndex = startIndex + pageSize;
+      const pageData = data.slice(startIndex, endIndex);
+      pageData.forEach(cardData => generateCard(cardData));
+    }
+function renderPagination() {
+  paginationContainer.innerHTML = '';
+
+  const totalPages = Math.ceil(data.length / pageSize);
+
+  const prevButton = document.createElement('a');
+  prevButton.href = '#';
+  prevButton.innerText = 'Prev';
+  prevButton.addEventListener('click', () => {
+    if (currentPage > 1) {
+      currentPage--;
+      renderPage(currentPage);
+      renderPagination();
+    }
+  });
+  paginationContainer.appendChild(prevButton);
+
+  for (let i = 1; i <= totalPages; i++) {
+    const pageLink = document.createElement('a');
+    pageLink.href = '#';
+    pageLink.innerText = i;
+    if (i === currentPage) {
+      pageLink.classList.add('active');
+    }
+    pageLink.addEventListener('click', () => {
+      currentPage = i;
+      renderPage(currentPage);
+      renderPagination();
+    });
+    paginationContainer.appendChild(pageLink);
+
+    // Add a space after each pagination link
+    const space = document.createTextNode(' ');
+    paginationContainer.appendChild(space);
+  }
+
+  const nextButton = document.createElement('a');
+  nextButton.href = '#';
+  nextButton.innerText = 'Next';
+  nextButton.addEventListener('click', () => {
+    if (currentPage < totalPages) {
+      currentPage++;
+      renderPage(currentPage);
+      renderPagination();
+    }
+  });
+  paginationContainer.appendChild(nextButton);
+}
+
+
+    renderPage(currentPage);
+    renderPagination();
+
+})
+  .catch(function(error) {
+    console.log('Error:', error);
+  });
+
+    
+  </script>
+</body>
+</html>

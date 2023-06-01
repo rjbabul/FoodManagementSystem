@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>
+    Loging Page
+  </title>
+
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    
+     function LoginControl()
+     {
+        
+        var email = document.getElementById("email").value;
+        var password = document.getElementById("password").value;
+       
+          // Email Validation
+
+          if(email.length==0)
+          {
+
+               alert("Email filed must be fill up.");  
+                return false;
+          } 
+
+          else if(email.length>0)
+          {
+               let i = email.length-1;
+               while(email[i]==' ' && i>=0) i--;
+               i++;
+
+              for(let index =0 ; email[index]!='@'; index++)
+                {
+                   if((email[index]>='a' && email[index]<='z')|| (email[index]>='A' && email[index]<='Z') || (email[index]>='0' && email[index]<='9') )
+                   {
+                     continue;
+                   }
+                   else
+                   {
+                     alert("Email can't contain any special character.");  
+                     return false;
+                   }
+                }
+
+               for(let index = 0; index<i;index++)
+               {
+                 if(email[index]==' ')
+                 {
+                   alert("Email can't contain any whitespace.");  
+                   return false;
+                 }
+               }
+                
+               if(email.substring(i-10, i+1)!="@gmail.com")
+               {
+                  alert("Email must be end with @gmail.com .");  
+                   return false;
+               }
+          } 
+
+          // Password validation
+
+         if(password.length<6)
+          {  
+            alert("Password must be at least 6 characters long.");  
+            return false;  
+          }
+          else
+          {
+            for (let i =0; i<password.length;i++)
+            {
+              if(password[i]==' ')
+              {
+                alert("Password can't contain any whitespace.");  
+                return false;
+              }
+            }
+          }
+
+          
+         
+        var obj = JSON.parse(localStorage.getItem('myStorage'));
+      
+        
+        var status =0;
+        var temp ;
+        for(let i = 0;i<obj.length;i++)
+        {
+
+          var myobj = obj[i];
+           
+          if(myobj.Password == password && myobj.Email == email)
+          {
+            status =1;
+            temp = myobj;
+          }
+          
+        }
+          if(status)
+          {
+             sessionStorage.setItem('username', email);
+             sessionStorage.setItem('isLoggedIn', 'true');
+             
+
+             var logobj ={
+              "name": temp.name,
+              "email": email,
+              "date": new Date()
+             }
+            var Logjson = JSON.stringify(logobj);
+            localStorage.setItem('LogSession', Logjson);
+            window.location.href = "profile.html";
+ 
+          }
+          else
+          {
+            alert("Invalid Username or Password!.");  
+            return false;
+          }
+
+         
+        // if(obj.Password == password && obj.Email == email)
+        // {
+        //   alert("Login Successfully."); 
+        //   return true;
+        // }
+        // else
+        // {
+        //   alert("Invalid password or email."); 
+        //   return false;
+        // }
+       
+        return false;
+       
+     }  
+         
+ 
+  </script> 
+
+</head>
+
+<!-- Main Body -->
+<body>
+
+<div class="container">
+     
+  <div>
+    
+     <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="searchByfood.html">Search by Food</a></li>
+        <li><a href="searchByresturant.html">Search by Resturant</a></li>
+        <li><a href="searchByCategory.html">Search by Food Category</a></li>
+        <li><a href="registration.html">SignUp</a></li>
+        <li><a href="Login.html">Login</a></li>
+      </ul>
+    </nav>
+
+  </div>
+    
+ 
+  <div class="containers" >
+    <h2>Login Page</h2>
+    <form onsubmit="return LoginControl()" method="POST">
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" >
+      </div>
+ 
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" >
+      </div>
+       
+      <div class="form-group">
+        <input type="submit" value="Login">
+      </div>
+      <div style="margin-top: 10px; margin-bottom: 20px; font-weight: bold;">
+              
+          <label for="cb1">If you don'y have any account click <a href="registration.html">Registration</a> </label>
+            </div>
+    </form>
+  </div>
+ 
+
+</div>
+
+<!-- Body End -->
+
+
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Profile
+	</title>
+	<link rel="stylesheet" href="styles.css">
+	<script>
+		
+		var email = sessionStorage.getItem('username');
+		var user;
+
+		var obj = JSON.parse(localStorage.getItem('myStorage'));
+		for(let i = 0;i<obj.length;i++)
+        {
+          var myobj = obj[i];
+           
+          if(myobj.Email == email)
+          {
+            user = obj[i];
+          }
+          
+        }
+         
+	</script>
+</head>
+
+<body>
+  <div class="container">
+		 
+	  <nav>
+      <ul>
+      <li><a href="profile.html"><script >document.write(user.name);</script></a></li>
+      <li><a href="Updateprofile.html">Update profile</a></li>
+       <li><a href="searchfood.html">Search food</a></li>
+        <li><a href="AddFood.html">Add Food</a></li>
+        <li><a href="ViewList.html">Food List</a></li>
+        
+        <li><a href="#" onclick="logoutControl()">LogOut</a></li>
+      </ul>
+    </nav>
+  </div>
+    
+ 
+  <div style="background-color: white;" class ="container">
+    
+     <table class="borderless">
+     
+      <tr>
+        <th>Name</th>
+        <th><script> document.write(user.name); </script> </th>
+      </tr>
+
+     <tr>
+        <th>Email</th>
+        <th><script> document.write(user.Email); </script> </th>
+      </tr>
+
+      <tr>
+        <th>Gender</th>
+       <th><script> document.write(user.Gender); </script> </th>
+      </tr>
+  </table>
+
+
+  </div>
+  <script src="logoutControl.js"></script>
+</body>
+</html>

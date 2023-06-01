@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>
+    Registration form
+  </title>
+
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="registration.css">
+  <script src="script.js"></script>
+  <script src="registration_style.js"></script>
+  
+<style>
+   
+  </style>
+</head>
+<script > 
+  // Sample food data
+ var foodData;
+ fetch('data.json')
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(data) {
+    // Process the data here
+     
+     foodData = data;
+
+})
+  .catch(function(error) {
+    console.log('Error:', error);
+  });
+
+ 
+// Function to perform food search
+function searchFood() {
+  var restaurantName = document.getElementById('restaurant-name').value;
+  
+
+  var resultsContainer = document.getElementById('results-container');
+  resultsContainer.innerHTML = '';
+
+  // Filter the food data based on search criteria
+  var filteredData = foodData.filter(function(food) {
+    return food.restaurant.includes(restaurantName);
+  });
+
+  // Display the search results
+  filteredData.forEach(function(food) {
+    var resultItem = document.createElement('div');
+    resultItem.className = 'results-item';
+
+
+    var name = document.createElement('h3');
+    name.textContent = food.foodname;
+    resultItem.appendChild(name);
+
+    var category = document.createElement('p');
+    category.textContent = 'Category: ' + food.category;
+    resultItem.appendChild(category);
+
+    var restaurant = document.createElement('p');
+    restaurant.textContent = 'Restaurant: ' + food.restaurant;
+    resultItem.appendChild(restaurant);
+
+    var category = document.createElement('p');
+    category.textContent = 'Price: ' + food.price;
+    resultItem.appendChild(category);
+
+    var category = document.createElement('p');
+    category.textContent = 'Manufacturing Date: ' + food.manufacture_date;
+    resultItem.appendChild(category);
+
+    var category = document.createElement('p');
+    category.textContent = 'Expire Date: ' + food.expiration_date;
+    resultItem.appendChild(category);
+
+    var brek="______________________";
+    var category = document.createElement('p');
+    category.textContent = brek;
+    resultItem.appendChild(category);
+
+    resultsContainer.appendChild(resultItem);
+  });
+}
+
+
+
+  </script>
+
+<body>
+  
+
+<div class="container">
+      <div>
+      
+       <nav>
+        <ul>
+         <li><a href="index.html">Home</a></li>
+          <li><a href="searchByfood.html">Search by Food</a></li>
+          <li><a href="searchByresturant.html">Search by Resturant</a></li>
+          <li><a href="searchByCategory.html">Search by Food Category</a></li>
+          <li><a href="registration.html">SignUp</a></li>
+          <li><a href="Login.html">Login</a></li>
+        </ul>
+      </nav>
+  </div>
+    <div style="margin-left: 50px;">
+      <div class= "container">
+    <h1>Search Food</h1>
+      <div class="search-container">
+        <label for="category" style="font-weight: bold; color: green;">Restaurant Name</label>
+        <input type="text" id="restaurant-name" placeholder="Restaurant Name">
+      </div>
+
+
+        <button style="background-color: green; margin-left: 250px;" onclick="searchFood()">Search</button>
+      </div>
+
+      <div class= "container" id="results-container"></div>
+   </div>
+
+    </div>
+
+
+</div>
+
+</body>
+</html>

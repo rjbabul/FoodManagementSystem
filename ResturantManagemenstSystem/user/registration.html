@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>
+    Registration form
+  </title>
+
+  <link rel="stylesheet" href="styles.css">
+  
+
+  
+  
+<script >
+ function RegistrationControl()
+ {
+    var name = document.getElementById("name").value;
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+    var confirmPass = document.getElementById("confirmpassword").value;
+   //var gender = document.getElementById("gender").value;
+    var gender = document.querySelector('input[id="gender"]:checked').value;
+ 
+    // Name Validation 
+
+    if (name==null || name=="")
+      {  
+        alert("Name can't be blank");  
+        return false;  
+      }
+    else 
+      {
+        for(let i =0 ; i< name.length; i++)
+        {
+          if((name[i]<='z' && name[i]>='a')||(name[i]<='Z' && name[i]>='A')|| name[i]==' ' || name[i]=='.')
+            {
+              continue;
+            }
+          else
+          {
+            alert("Name just contain a-z, A-Z and whitespace");  
+            return false;  
+          }
+        }
+      }
+
+      // Email Validation
+
+      if(email.length==0)
+      {
+           alert("Email filed must be fill up.");  
+            return false;
+      } 
+
+      else if(email.length>0)
+      {
+           let i = email.length-1;
+           while(email[i]==' ' && i>=0) i--;
+           i++;
+
+          for(let index =0 ; email[index]!='@'; index++)
+            {
+               if((email[index]>='a' && email[index]<='z')|| (email[index]>='A' && email[index]<='Z') || (email[index]>='0' && email[index]<='9') )
+               {
+                 continue;
+               }
+               else
+               {
+                 alert("Email can't contain any special character.");  
+                 return false;
+               }
+            }
+
+           for(let index = 0; index<i;index++)
+           {
+             if(email[index]==' ')
+             {
+               alert("Email can't contain any whitespace.");  
+               return false;
+             }
+           }
+            console.log(email.substring(i-10, i+1));
+
+           if(email.substring(i-10, i+1)!="@gmail.com")
+           {
+              alert("Email must be end with @gmail.com .");  
+               return false;
+           }
+      } 
+
+      // Password validation
+
+     if(password.length<6)
+      {  
+        alert("Password must be at least 6 characters long.");  
+        return false;  
+      }
+      else
+      {
+        for (let i =0; i<password.length;i++)
+        {
+          if(password[i]==' ')
+          {
+            alert("Password can't contain any whitespace.");  
+            return false;
+          }
+        }
+      }
+
+      
+    // document.write("Name : "+name+"<br>");
+    // document.write("Email : "+email+"<br>");
+    // document.write("Password : "+password+"<br>");
+    // document.write("Confirm Password : "+confirmPass+"<br>");
+    // document.write("Gender : "+gender+"<br>");
+     if(password != confirmPass)
+    {
+      alert("Password not matching!.");  
+      return false;
+    }
+    else
+    {
+      var myobj =
+          {
+            "name": name,
+            "Email": email,
+            "Password": password,
+            "Gender": gender 
+          }; 
+          
+         
+         if(localStorage.getItem('myStorage'))
+         {
+          var mylist = JSON.parse(localStorage.getItem('myStorage'));
+          mylist.push(myobj);
+         }
+         else
+         {
+            var mylist = [];
+            mylist.push(myobj);
+         }
+
+          var myjson = JSON.stringify(mylist);
+          localStorage.setItem('myStorage', myjson);
+
+          alert("Registration Succesfully");  
+           return false;
+
+    }
+
+   
+
+ }  
+     
+
+</script>
+
+
+</head>
+<body>
+
+<div class="container">
+     
+  <div>
+    
+     <nav>
+      <ul>
+       <li><a href="index.html">Home</a></li>
+        <li><a href="searchByfood.html">Search by Food</a></li>
+        <li><a href="searchByresturant.html">Search by Resturant</a></li>
+        <li><a href="searchByCategory.html">Search by Food Category</a></li>
+        <li><a href="registration.html">SignUp</a></li>
+        <li><a href="Login.html">Login</a></li>
+      </ul>
+    </nav>
+
+  </div>
+    
+ 
+  <div class="containers" >
+    <h2>Registration</h2>
+    <form onsubmit="return RegistrationControl()" method="POST">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"  >
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email"  >
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password"  >
+      </div>
+      <div class="form-group">
+        <label for="confirmpassword">Confirm Password:</label>
+        <input type="password" id="confirmpassword" name="confirmpassword"  >
+      </div>
+
+      <div style="font-weight: bold;">
+              <label  >Gender: </label>  
+              <input type="radio" id="gender" name="gender"  value="male"   /> Male 
+              <input type="radio" id="gender" name="gender"  value="female"/> Female      
+      </div>
+ 
+
+
+            <div style="margin-top: 10px; margin-bottom: 20px; font-weight: bold;">
+              <input type="checkbox" id="cb1"    >
+          <label for="cb">I agree with terms and conditions</label>
+            </div>
+      <div class="form-group">
+        <input type="submit" value="Register">
+      </div>
+
+         <div style="margin-top: 10px; margin-bottom: 20px; font-weight: bold;">
+              
+          <label for="cb1">If you have already account click <a href="Login.html">Login</a> </label>
+            </div>
+    </form>
+  </div>
+ 
+
+</div>
+
+
+
+
+</body>
+</html>

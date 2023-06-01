@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>
+    Profile
+  </title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="food.css">
+
+  <script>
+    
+    var email = sessionStorage.getItem('username');
+    var user;
+
+    var obj = JSON.parse(localStorage.getItem('myStorage'));
+    for(let i = 0;i<obj.length;i++)
+        {
+          var myobj = obj[i];
+           
+          if(myobj.Email == email)
+          {
+            user = obj[i];
+          }
+          
+        }
+
+ // Sample food data
+ var foodData;
+ fetch('data.json')
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(data) {
+    // Process the data here
+     
+     foodData = data;
+
+})
+  .catch(function(error) {
+    console.log('Error:', error);
+  });
+
+ 
+// Function to perform food search
+function searchFood() {
+  var foodName = document.getElementById('food-name').value;
+  var category = document.getElementById('category').value;
+  var restaurantName = document.getElementById('restaurant-name').value;
+
+  var resultsContainer = document.getElementById('results-container');
+  resultsContainer.innerHTML = '';
+
+  // Filter the food data based on search criteria
+  var filteredData = foodData.filter(function(food) {
+    return food.foodname.includes(foodName) &&
+           food.category.includes(category) &&
+           food.restaurant.includes(restaurantName);
+  });
+
+  // Display the search results
+  filteredData.forEach(function(food) {
+    var resultItem = document.createElement('div');
+    resultItem.className = 'results-item';
+
+
+    var name = document.createElement('h3');
+    name.textContent = food.foodname;
+    resultItem.appendChild(name);
+
+    var category = document.createElement('p');
+    category.textContent = 'Category: ' + food.category;
+    resultItem.appendChild(category);
+
+    var restaurant = document.createElement('p');
+    restaurant.textContent = 'Restaurant: ' + food.restaurant;
+    resultItem.appendChild(restaurant);
+
+    var category = document.createElement('p');
+    category.textContent = 'Price: ' + food.price;
+    resultItem.appendChild(category);
+
+    var category = document.createElement('p');
+    category.textContent = 'Manufacturing Date: ' + food.manufacture_date;
+    resultItem.appendChild(category);
+
+    var category = document.createElement('p');
+    category.textContent = 'Expire Date: ' + food.expiration_date;
+    resultItem.appendChild(category);
+
+    var brek="______________________";
+    var category = document.createElement('p');
+    category.textContent = brek;
+    resultItem.appendChild(category);
+
+    resultsContainer.appendChild(resultItem);
+  });
+}
+
+
+
+  </script>
+
+</head>
+
+<body>
+   
+     
+ <div class="container">
+     
+    <nav>
+      <ul>
+      <li><a href="profile.html"><script >document.write(user.name);</script></a></li>
+      <li><a href="Updateprofile.html">Update profile</a></li>
+       <li><a href="searchfood.html">Search food</a></li>
+        <li><a href="AddFood.html">Add Food</a></li>
+        <li><a href="ViewList.html">Food List</a></li>
+         
+        <li><a href="#" onclick="logoutControl()">LogOut</a></li>
+      </ul>
+    </nav>
+  </div>
+    
+   <div class= "container" >
+    <h1 >Search Food</h1>
+      <div class="search-container" >
+        <input type="text" id="food-name" placeholder="Food Name">
+        <input type="text" id="category" placeholder="Category">
+        <input type="text" id="restaurant-name" placeholder="Restaurant Name">
+        <button onclick="searchFood()">Search</button>
+      </div>
+
+      <div id="results-container"></div>
+   </div>
+
+ 
+  <!-- <div   >
+    <h2>Search Food</h2>
+     <form onsubmit="return Search()" class="food-form" method="POST">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name"  >
+
+    <label for="category">Category:</label>
+    <select id="category" name="category">
+      <option value="breakfast">Breakfast</option>
+      <option value="lunch">Lunch</option>
+      <option value="dinner">Dinner</option>
+      <option value="snack">Snack</option>
+      <option value="dessert">Dessert</option>
+    </select>
+
+    <label for="restaurant">Restaurant:</label>
+    <input type="text" id="restaurant" name="restaurant"  >
+
+     
+    <input type="submit" value="Search Food">
+  </form>
+
+
+  </div> -->
+</body>
+</html>

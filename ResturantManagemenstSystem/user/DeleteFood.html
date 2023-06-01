@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Profile
+	</title>
+	<link rel="stylesheet" href="styles.css">
+	<script>
+		
+		var email = sessionStorage.getItem('username');
+		var user;
+
+		var obj = JSON.parse(localStorage.getItem('myStorage'));
+    
+		for(let i = 0;i<obj.length;i++)
+        {
+          var myobj = obj[i];
+           
+          if(myobj.Email == email)
+          {
+            user = obj[i];
+          }
+          
+        } 
+
+        
+       
+        // for(let i = 0;i<obj.length;i++)
+        // {
+        //   var food = fooditem[i];
+           
+        // }
+
+      
+
+	</script>
+</head>
+
+<body>
+  <div class="container">
+		 
+	<div>
+    
+     <nav>
+      <ul>
+      <li><a href="profile.html"><script >document.write(user.name);</script></a></li>
+      <li><a href="Updateprofile.html">Update profile</a></li>
+       <li><a href="searchfood.html">Search food</a></li>
+        <li><a href="AddFood.html">Add Food</a></li>
+        <li><a href="ViewList.html">Food List</a></li>
+        
+        <li><a href="#" onclick="logoutControl()">LogOut</a></li>
+      </ul>
+    </nav>
+  </div>
+    
+ 
+  <div style="background-color: white;" >
+    
+     <table class="borderless" id="object-table">
+      <tr>
+        <th>Food Name</th>
+        <th>category</th>
+        <th>manufacture_date</th>
+        <th>expiration_date</th>
+        <th>restaurant</th>
+        <th>price</th>
+        
+          
+      </tr>
+
+      
+  </table>
+<script src="fooditem.js"></script>
+
+  </div>
+</body>
+</html>

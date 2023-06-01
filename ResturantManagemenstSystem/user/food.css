@@ -1,0 +1,34 @@
+.food-form {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.food-form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.food-form input,
+.food-form select,
+.food-form textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.food-form textarea {
+  height: 100px;
+}
+
+.food-form input[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.food-form input[type="submit"]:hover {
+  background-color: #45a049;
+}
